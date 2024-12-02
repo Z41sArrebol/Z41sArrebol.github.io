@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>2024 WuCup CTF wp</title>
+    <url>/2024/12/02/WuCup%20CTF/</url>
+    <content><![CDATA[<p>0xGame作为笔者的启蒙赛事，笔者从中学习到了一些CTF的基本知识</p>
+<p>而WuCup则是笔者第一个独立参加的网络赛事</p>
+<p>虽然只做出来四道题，但是99%的步骤都是本人完成))</p>
+<p>恰逢笔者的博客基本搭建完成，所以兴奋的把本来用PDF提交的wp转成.md格式扔到这里</p>
+<h1 id="Web-Sign"><a href="#Web-Sign" class="headerlink" title="Web-Sign"></a>Web-Sign</h1><p>开启题目环境后，使用webshell工具中国蚁剑连接</p>
+<p>题目环境已经告知密码passwd为sgin</p>
+<p><img src="/image/WuCup/WuCup1.png"></p>
+<p>连接后打开最上层的目录，在最底下发现flag的文件夹</p>
+<p><img src="/image/WuCup/WuCup2.png"><br><img src="/image/WuCup/WuCup3.png"></p>
+<p>WuCup{253e7c29-a436-4f17-bce2-72ce13731ba3}</p>
+<h1 id="Crypto-easy"><a href="#Crypto-easy" class="headerlink" title="Crypto-easy"></a>Crypto-easy</h1><p>观察应该是RC4加密，直接扔kimi写脚本</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">key = <span class="string">&quot;hello world&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化s和t数组</span></span><br><span class="line">s = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">256</span>))</span><br><span class="line">j = <span class="number">0</span></span><br><span class="line">t = [<span class="built_in">ord</span>(c) <span class="keyword">for</span> c <span class="keyword">in</span> key] * (<span class="number">256</span> // <span class="built_in">len</span>(key)) + [<span class="built_in">ord</span>(c) <span class="keyword">for</span> c <span class="keyword">in</span> key][:(<span class="number">256</span> % <span class="built_in">len</span>(key))]</span><br><span class="line"></span><br><span class="line"><span class="comment"># RC4算法生成密钥流</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">256</span>):</span><br><span class="line">    j = (j + s[i] + t[i]) % <span class="number">256</span></span><br><span class="line">    s[i], s[j] = s[j], s[i]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用于解密的索引</span></span><br><span class="line">i = j = <span class="number">0</span></span><br><span class="line">flag_encrypted = [</span><br><span class="line">    <span class="number">0xd8</span>, <span class="number">0xd2</span>, <span class="number">0x96</span>, <span class="number">0x3e</span>, <span class="number">0x0d</span>, <span class="number">0x8a</span>, <span class="number">0xb8</span>, <span class="number">0x53</span>, <span class="number">0x3d</span>, <span class="number">0x2a</span>, <span class="number">0x7f</span>, <span class="number">0xe2</span>, <span class="number">0x96</span>, <span class="number">0xc5</span>, <span class="number">0x29</span>, <span class="number">0x23</span>,</span><br><span class="line">    <span class="number">0x39</span>, <span class="number">0x24</span>, <span class="number">0x6e</span>, <span class="number">0xba</span>, <span class="number">0x0d</span>, <span class="number">0x29</span>, <span class="number">0x2d</span>, <span class="number">0x57</span>, <span class="number">0x52</span>, <span class="number">0x57</span>, <span class="number">0x83</span>, <span class="number">0x59</span>, <span class="number">0x32</span>, <span class="number">0x2c</span>, <span class="number">0x3a</span>, <span class="number">0x77</span>,</span><br><span class="line">    <span class="number">0x89</span>, <span class="number">0x2d</span>, <span class="number">0xfa</span>, <span class="number">0x72</span>, <span class="number">0x61</span>, <span class="number">0xb8</span>, <span class="number">0x4f</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解密flag</span></span><br><span class="line">flag_decrypted = []</span><br><span class="line"><span class="keyword">for</span> byte <span class="keyword">in</span> flag_encrypted:</span><br><span class="line">    i = (i + <span class="number">1</span>) % <span class="number">256</span></span><br><span class="line">    j = (j + s[i]) % <span class="number">256</span></span><br><span class="line">    s[i], s[j] = s[j], s[i]</span><br><span class="line">    x = (s[i] + s[j]) % <span class="number">256</span></span><br><span class="line">    flag_decrypted.append(byte ^ s[x])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将解密后的bytes转换为字符串</span></span><br><span class="line">flag = <span class="string">&#x27;&#x27;</span>.join(<span class="built_in">chr</span>(b) <span class="keyword">for</span> b <span class="keyword">in</span> flag_decrypted)</span><br><span class="line"><span class="built_in">print</span>(flag)</span><br></pre></td></tr></table></figure>
+
+<p>最后扔到编译器运行就行</p>
+<p><img src="/image/WuCup/WuCup4.png"></p>
+<p>WuCup{55a0a84f86a6ad40006f014619577ad3}</p>
+<h1 id="Misc-原神启动"><a href="#Misc-原神启动" class="headerlink" title="Misc-原神启动"></a>Misc-原神启动</h1><p>打开压缩包之后只有一张图片和一个加密的word文档</p>
+<p>Winhex打开发现就是正常的png文件，考虑其他隐写方式</p>
+<p>扔到stegsolve里面看看</p>
+<p><img src="/image/WuCup/WuCup5.png"></p>
+<p>很清楚的打开了第一层加密，里面是一个word文档，打开后只有 原神启动！这几个字</p>
+<p>网上搜索，改成.zip格式再进行分析</p>
+<p>分析压缩包，发现在word&#x2F;media目录下有一个image1.png图片，打开很容易发现一行字</p>
+<p><img src="/image/WuCup/WuCup6.png"></p>
+<p>为了更清楚一点，还是扔到stegsolve进行处理</p>
+<p><img src="/image/WuCup/WuCup7.png"></p>
+<p>此为第二层加密</p>
+<p>打开后，发现还有一个被加密的txt文件，因为没有发现其他线索，优先考虑伪加密</p>
+<p>扔到winhex里面，发现只是正常的加密</p>
+<p>故重新返回目录.xml文件进行寻找</p>
+<p>考虑到一二层的密码都为WuCup{ }格式，猜想第三层密码也相同，但在所有文件搜索WuCup都没有结果</p>
+<p>于是缩小范围，搜索Wu和”{“，最终在document.xml中发现了线索（标蓝色的）</p>
+<p><img src="/image/WuCup/WuCup8.png"></p>
+<p>仔细往后看不难发现所有的元素组合起来即为一个标准的flag格式（如下图）</p>
+<p><img src="/image/WuCup/WuCup9.png"></p>
+<p>（此处换了个编辑器，显示的会更明显）</p>
+<p>组合起来可得到第三层密码：WuCup{f848566c-3fb6-4bfd-805a-d9e102511784}</p>
+<p>输入密码得到txt文件</p>
+<p><img src="/image/WuCup/WuCup10.png"></p>
+<p>WuCup{0e49b776-b732-4242-b91c-8c513a1f12ce}</p>
+<h1 id="Misc-Sign"><a href="#Misc-Sign" class="headerlink" title="Misc-Sign"></a>Misc-Sign</h1><p>签到题，十六进制的字符串，扔cyberchef里面直接出</p>
+<p><img src="/image/WuCup/WuCup11.png"></p>
+<p>WuCup{df357d47-31cb-42a8-aa0c-6430634ddf4a}</p>
+]]></content>
+      <tags>
+        <tag>CTF</tag>
+      </tags>
+  </entry>
+</search>
