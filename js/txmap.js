@@ -81,13 +81,13 @@ function showWelcome() {
                     posdesc = "天苍苍，野茫茫，风吹草低见牛羊。";
                     break;
                 case "辽宁省":
-                    posdesc = "我想吃烤鸡架！";
+                    posdesc = "请我吃烤鸡架！";
                     break;
                 case "吉林省":
                     posdesc = "状元阁就是东北烧烤之王。";
                     break;
                 case "黑龙江省":
-                    posdesc = "很喜欢哈尔滨大剧院。";
+                    posdesc = "带我去冰雪大世界吧hhhh。";
                     break;
                 case "上海市":
                     posdesc = "众所周知，中国只有两个城市。";
@@ -95,13 +95,13 @@ function showWelcome() {
                 case "江苏省":
                     switch (ipLoacation.result.ad_info.city) {
                         case "南京市":
-                            posdesc = "这是我挺想去的城市啦。";
+                            posdesc = "看来我们离得还挺近嗷！";
                             break;
                         case "苏州市":
                             posdesc = "上有天堂，下有苏杭。";
                             break;
                         default:
-                            posdesc = "散装是必须要散装的。";
+                            posdesc = "散装是必须要散装的（doge）";
                             break;
                     }
                     break;
@@ -117,7 +117,7 @@ function showWelcome() {
                             posdesc = "臣本布衣，躬耕于南阳。此南阳非彼南阳！";
                             break;
                         case "驻马店市":
-                            posdesc = "峰峰有奇石，石石挟仙气。嵖岈山的花很美哦！";
+                            posdesc = "峰峰有奇石，石石挟仙气。";
                             break;
                         case "开封市":
                             posdesc = "刚正不阿包青天。";
@@ -131,7 +131,7 @@ function showWelcome() {
                     }
                     break;
                 case "安徽省":
-                    posdesc = "蚌埠住了，芜湖起飞。";
+                    posdesc = "蚌埠住了，芜湖起飞！";
                     break;
                 case "福建省":
                     posdesc = "井邑白云间，岩城远带山。";
@@ -143,7 +143,7 @@ function showWelcome() {
                     posdesc = "遥望齐州九点烟，一泓海水杯中泻。";
                     break;
                 case "湖北省":
-                    posdesc = "来碗热干面！";
+                    posdesc = "请我吃碗热干面！";
                     break;
                 case "湖南省":
                     posdesc = "74751，长沙斯塔克。";
@@ -158,7 +158,7 @@ function showWelcome() {
                     posdesc = "朝观日出逐白浪，夕看云起收霞光。";
                     break;
                 case "四川省":
-                    posdesc = "康康川妹子。";
+                    posdesc = "请我吃火锅！（doge）";
                     break;
                 case "贵州省":
                     posdesc = "茅台，学生，再塞200。";
@@ -170,13 +170,13 @@ function showWelcome() {
                     posdesc = "躺在茫茫草原上，仰望蓝天。";
                     break;
                 case "陕西省":
-                    posdesc = "来份臊子面加馍。";
+                    posdesc = "给我来份臊子面加馍！";
                     break;
                 case "甘肃省":
                     posdesc = "羌笛何须怨杨柳，春风不度玉门关。";
                     break;
                 case "青海省":
-                    posdesc = "牛肉干和老酸奶都好好吃。";
+                    posdesc = "你们那的牛肉干和老酸奶肯定很好吃！";
                     break;
                 case "宁夏回族自治区":
                     posdesc = "大漠孤烟直，长河落日圆。";
@@ -217,7 +217,7 @@ function showWelcome() {
     try {
         //自定义文本和需要放的位置
         document.getElementById("welcome-info").innerHTML =
-            `<b><center>🎉 欢迎信息 🎉</center>&emsp;&emsp;欢迎来自 <span style="color:var(--theme-color)">${pos}</span> 的小伙伴，${timeChange}您现在距离站长约 <span style="color:var(--theme-color)">${dist}</span> 公里，当前的IP地址为： <span style="color:var(--theme-color)">${ip}</span>， ${posdesc}</b>`;
+            `<b><center>🎉 欢迎信息 🎉</center>&emsp;&emsp;欢迎来自 <span style="color:var(--theme-color)">${pos}</span> 的小伙伴，${timeChange}您现在距离站长约 <span style="color:var(--theme-color)">${dist}</span> 公里，您当前的IP地址为（可能为ipv4/6格式）： <span style="color:var(--theme-color)">${ip}</span>， ${posdesc}</b>`;
     } catch (err) {
         // console.log("Pjax无法获取#welcome-info元素🙄🙄🙄")
     }

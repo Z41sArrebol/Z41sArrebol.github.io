@@ -89,9 +89,9 @@ h6::before {
 
 #welcome-info {
     background: linear-gradient(45deg, #b9f4f3, #e3fbf9);
-    border-radius: 18px;
+    border-radius: 20px;
     padding: 8px;
   }
   [data-theme="dark"] #welcome-info {
-    background: #212121;
+    background: #080808;
   }
