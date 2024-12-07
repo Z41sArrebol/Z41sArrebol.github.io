@@ -94,7 +94,7 @@ h6::before {
     padding: 20px;
   }
   [data-theme="dark"] #welcome-info {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0);
   }
 
 

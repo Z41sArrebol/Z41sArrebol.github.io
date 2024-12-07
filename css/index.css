@@ -1,7 +1,7 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
   line-height: 1.15;
-  -webkit-text-size-adjust: 100%
+  -webkit-text-size-adjust: 200%
 }
 
 body {
@@ -25,7 +25,7 @@ hr {
 
 pre {
   font-family: monospace, monospace;
-  font-size: 1em
+  font-size: 2em
 }
 
 a {
@@ -47,7 +47,7 @@ code,
 kbd,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em
+  font-size: 2em
 }
 
 small {
@@ -1334,7 +1334,7 @@ canvas:not(#ribbon-canvas),
   }
 }
 :root {
-  --global-font-size: 14px;
+  --global-font-size: 16px;
   --global-bg: #fff;
   --font-color: #4c4948;
   --hr-border: #a4d8fa;
@@ -1672,7 +1672,7 @@ figure.highlight pre .javascript .function {
 }
 .container pre,
 .container code {
-  font-size: var(--global-font-size);
+  font-size: 13px;
   font-family: consolas, Menlo, 'PingFang SC', 'Microsoft YaHei', sans-serif !important;
   border-radius: 6px;
 }
@@ -1702,7 +1702,7 @@ figure.highlight pre .javascript .function {
 .container figure.highlight figcaption,
 .container figure.highlight .caption {
   padding: 6px 0 2px 14px;
-  font-size: var(--global-font-size);
+  font-size: 13px;
   line-height: 1em;
 }
 .container figure.highlight figcaption a,
@@ -1747,7 +1747,7 @@ figure.highlight pre .javascript .function {
   height: 2.15em;
   background: var(--hltools-bg);
   color: var(--hltools-color);
-  font-size: var(--global-font-size);
+  font-size: 13px;
   overflow: hidden;
 }
 .container .highlight-tools > * {
@@ -1835,7 +1835,7 @@ figure.highlight pre .javascript .function {
   width: 100%;
   background: var(--hlexpand-bg);
   text-align: center;
-  font-size: var(--global-font-size);
+  font-size: 13px;
   cursor: pointer;
 }
 .container .code-expand-btn i {

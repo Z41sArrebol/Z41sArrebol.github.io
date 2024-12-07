@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>攻防世界引导模式 web 前10题wp</title>
+      <link href="/2024/12/08/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%89%8D10%E9%A2%98wp%EF%BC%88%E5%BC%95%E5%AF%BC%E6%A8%A1%E5%BC%8F%EF%BC%89/"/>
+      <url>/2024/12/08/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%89%8D10%E9%A2%98wp%EF%BC%88%E5%BC%95%E5%AF%BC%E6%A8%A1%E5%BC%8F%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<p>让我们从最基础的开始看起吧qaq</p><p>因为都是较为简单的题，网上有大把详细wp，本文侧重于记录新学到的东西</p><p>此博客为本蒟蒻做的第一篇针对web的wp，如有问题还请多多指教</p><h1 id="view-source"><a href="#view-source" class="headerlink" title="view_source"></a>view_source</h1><p>法1：禁用右键，关我Ctrl+U什么事））</p><p>法2：在网站前加上“view-source:”即可。</p><p>法3：直接在edge右上角打开开发人员工具，源代码中即可看到flag。</p><h1 id="robots"><a href="#robots" class="headerlink" title="robots"></a>robots</h1><p>根据题目，了解robots协议：</p><p>“robots.txt是搜索引擎中访问网站的时候要查看的第一个文件。当一个搜索蜘蛛访问一个站点时，它会首先检查该站点根目录下是否存在robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，所有的搜索蜘蛛将能够访问网站上所有没有被口令保护的页面。”</p><p>直接在网站后面加&#x2F;robots.txt即可看到flag。</p><p>这里还get了一个新工具：dirsearch，马上下载下来试试，发现很方便。</p><p><img src="/img/GFSJ10/GFSJ1.png"></p><h1 id="backup"><a href="#backup" class="headerlink" title="backup"></a>backup</h1><p>又学到了：常见的备份文件后缀名有: .git .svn .swp .svn .~ .bak .bash_history</p><p>活学活用，用上一题学到的工具扫</p><p><img src="/img/GFSJ10/GFSJ2.png"></p><p>正好有一个符合.bak文件的，进去之后下载附件，打开得到flag。</p><h1 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h1><p>没啥好说的，都在开发人员工具里面：</p><p>1.浏览器按下F12键打开开发者工具，刷新后，在存储一栏，可看到名为look-here的cookie的值为cookie.php</p><p>2.访问 题目环境位置网址&#x2F;cookie.php ，提示查看http响应包，在网络一栏，可看到访问cookie.php的数据包</p><p>3.点击查看数据包，在消息头内可发现flag</p><h1 id="disabled-button"><a href="#disabled-button" class="headerlink" title="disabled_button"></a>disabled_button</h1><p>按了按钮就能得到flag，但是按钮按不了了</p><p>属实是考了点前端知识，审查元素，发现存在disabled&#x3D;””字段，删掉后按钮就可以按了</p><h1 id="get-post"><a href="#get-post" class="headerlink" title="get_post"></a>get_post</h1><p>我用的是burpsuite，需要修改请求包，<strong>在这里注重一下get请求和post请求的区别</strong>：</p><p>POST请求比GET请求多了一行：</p><p>Content-Type: application&#x2F;x-www-form-urlencoded（务必加上）</p><p><a href="https://blog.csdn.net/weixin_51735061/article/details/123647266" title="非常好的博客，非常到位的总结">CTF——HTTP发送头Headers整理</a></p><p>如果要把两种请求混合起来发，则如下图所示</p><p><img src="/img/GFSJ10/GFSJ3.png"></p><h1 id="weak-auth"><a href="#weak-auth" class="headerlink" title="weak_auth"></a>weak_auth</h1><p>弱口令爆破，很熟练的操作</p><p>把密码字典的网址放在这里方便调用<a href="https://weakpass.com/">点我下载密码字典</a> </p><h1 id="simple-php"><a href="#simple-php" class="headerlink" title="simple_php"></a>simple_php</h1><p>题目给出代码如下：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="title function_ invoke__">show_source</span>(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="keyword">include</span>(<span class="string">&quot;config.php&quot;</span>);</span><br><span class="line"><span class="variable">$a</span>=@<span class="variable">$_GET</span>[<span class="string">&#x27;a&#x27;</span>];</span><br><span class="line"><span class="variable">$b</span>=@<span class="variable">$_GET</span>[<span class="string">&#x27;b&#x27;</span>];</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$a</span>==<span class="number">0</span> <span class="keyword">and</span> <span class="variable">$a</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$flag1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="title function_ invoke__">is_numeric</span>(<span class="variable">$b</span>))&#123;</span><br><span class="line">    <span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$b</span>&gt;<span class="number">1234</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$flag2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>“php中有两种比较符号，&#x3D;&#x3D;&#x3D; 会同时比较字符串的值和类型，&#x3D;&#x3D; 会先将字符串换成相同类型，再作比较，属于弱类型比较。”</p><p>又学到新东西了，这是php语言，<strong>看来还是要系统的学习一下</strong></p><p>同时满足 $a&#x3D;&#x3D;0 和 $a 时，显示flag1，php中的弱类型比较会使输入a&#x3D;任意字符时，得到flag1；is_numeric() 函数会判断，如果是数字和数字字符串则返回 TRUE，否则返回 FALSE,且php中弱类型比较时，会使(‘1234a’ &#x3D;&#x3D; 1234)为真，所以当输入a&#x3D;任意字符&amp;b&#x3D;111111，可得到flag2。</p><h1 id="Training-www-Robots"><a href="#Training-www-Robots" class="headerlink" title="Training_www_Robots"></a>Training_www_Robots</h1><p>和第二题完全一个东西，无需多言</p><h1 id="command-execution"><a href="#command-execution" class="headerlink" title="command_execution"></a>command_execution</h1><p><img src="/img/GFSJ10/GFSJ4.png"></p><p>题目说小宁只写了ping没开<strong>waf（web application firewall）</strong>，那就可以通过在<br>ping命令后面夹带东西来获取shell的写入权限，可以直接把输入框当作shell输入<br>界面（只不过它提前帮你输入了ping四个字母）。</p><p><strong>新知识：命令拼接：</strong> |的作用为将前一个命令的结果传递给后一个命令作为输入，&amp;&amp;的作用是前一条命令执行成功时，才执行后一条命令</p><p>直接用127.0.0.1 &amp;&amp; find &#x2F;-name flag.txt，成功，系统返回告诉我：&#x2F;home&#x2F;flag.txt，剩下的就不用多说了。-最后直接输入：127.0.0.1 &amp;&amp; cat &#x2F;home&#x2F;flag.txt，服务器直接就flag的内容返回给我们了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 一个web蒟蒻的成长日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CTF </tag>
+            
+            <tag> wp </tag>
+            
+            <tag> web </tag>
+            
+            <tag> 攻防世界 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>博客折腾日记（二）：hexo butterfly主题添加定位欢迎语（避坑详细教程）</title>
       <link href="/2024/12/06/%E5%8D%9A%E5%AE%A2%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E6%B7%BB%E5%8A%A0%E5%B0%8F%E7%BB%84%E4%BB%B6/"/>
       <url>/2024/12/06/%E5%8D%9A%E5%AE%A2%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E6%B7%BB%E5%8A%A0%E5%B0%8F%E7%BB%84%E4%BB%B6/</url>
@@ -20,7 +51,9 @@
       
         <tags>
             
-            <tag> 博客搭建 避坑 </tag>
+            <tag> 博客搭建 </tag>
+            
+            <tag> 避坑 </tag>
             
         </tags>
       
