@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>博客折腾日记（三）问题汇总（1/1）</title>
+      <link href="/2025/02/23/%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98/"/>
+      <url>/2025/02/23/%E5%8D%9A%E5%AE%A2%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h2 id="问题1：hexo-butterfly本地预览与实际部署效果不一样（已解决）"><a href="#问题1：hexo-butterfly本地预览与实际部署效果不一样（已解决）" class="headerlink" title="问题1：hexo butterfly本地预览与实际部署效果不一样（已解决）"></a>问题1：hexo butterfly本地预览与实际部署效果不一样（已解决）</h2><p>实际效果中排版变了，可能是css格式出了问题</p><p>上网搜索之后找到了解决方法：</p><p>在配置文件_config.yml里面（并非主题配置文件）找到如下代码</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">http://z41sarrebol.top</span></span><br><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line"><span class="attr">pretty_urls:</span></span><br><span class="line">  <span class="attr">trailing_index:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span></span><br><span class="line">  <span class="attr">trailing_html:</span> <span class="literal">true</span> <span class="comment"># Set to false to remove trailing &#x27;.html&#x27; from permalinks</span></span><br></pre></td></tr></table></figure><p>把url改成自己的域名即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客折腾日记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客搭建 </tag>
+            
+            <tag> 避坑 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java基础</title>
       <link href="/2025/02/23/java/"/>
       <url>/2025/02/23/java/</url>
